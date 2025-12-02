@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        background-color: black;
+    }
+
+    .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #1a1a1a;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        border: 1px solid #333333;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .back-button:hover {
+        background-color: #333333;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    .container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .texto {
+        font-size: 150px;
+        position: absolute;
+        left: 360px;
+        bottom: 80px;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        margin: 50px;
+        line-height: 0.9;
+    }
+
+    .perfil-dupla {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        margin: 60px;
+    }
+
+    .perfil-henrique,
+    .perfil-juliano {
+        width: 60%;
+        box-sizing: border-box;
+    }
+
+    .biografia-dupla {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        margin: 60px;
+    }
+
+    .bio-esquerda,
+    .bio-direita {
+        width: 80%;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        margin-bottom: 15px;
+        color: white;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: justify;
+        color: white;
+    }
+
+    img {
+        width: 60%;
+        box-sizing: border-box;
+    }
+
+    img {
+        box-sizing: border-box;
+    }
+
+    .perfil-dupla {
+        gap: 40px;
+    }
+
+    .perfil-henrique,
+    .perfil-juliano {
+        width: 48%;
+        box-sizing: border-box;
+    }
+
+    .perfil-henrique,
+    .perfil-juliano {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .perfil-henrique img,
+    .perfil-juliano img {
+        width: 35%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .biografia-dupla,
+    .perfil-dupla {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .biografia-dupla.visible,
+    .perfil-dupla.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.biografia-dupla, .perfil-dupla').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+<body>
+    <a href="../index.html" class="back-button">
+        <span>←</span> Voltar
+    </a>
+    <div class="container">
+        <img src="henrique & juliano.jpg" alt="">
+        <div class="texto"><strong>BIO
+                <br>GRAFIA</strong></div>
+    </div>
+    <div class="biografia-dupla">
+        <div class="bio-esquerda">
+            <p>
+                Nascidos na cidade de Palmeirópolis, interior do estado do Tocantins, Henrique & Juliano cresceram no
+                mercado
+                fonográfico como a velocidade da luz! Consolidaram-se em todo território nacional, conhecidos como a
+                dupla
+                que
+                arrasta multidões, sempre se mantiveram próximos dos fãs e de suas raízes, até hoje moram em Palmas e
+                não
+                abrem
+                a mão da vida na fazenda, os irmãos mantém seus ideais, personalidades e convicções em tudo o que se
+                propõem
+                a
+                fazer.
+            </p>
+        </div>
+        <div class="bio-direita">
+            <p>
+                Ao longo da carreira lançaram sucessivos trabalhos: “Ao Vivo em Palmas” (2012), “Ao Vivo em Brasília”
+                (2014),
+                “Novas Histórias” (2015), “O Céu Explica Tudo” (2017), “Menos é Mais” (2018) e “Ao Vivo no Ibirapuera”
+                (2019),
+                Manifesto Musical (2022), este último se tornou o álbum mais ouvido de 2022 na principal plataforma de
+                áudio
+                no
+                Brasil, o Spotify. Ainda atravessaram fronteiras para chegar na Times Square, passando a ser os
+                primeiros
+                brasileiros a conseguir a façanha de gravar um DVD no coração de Nova Iorque, extensão da primeira parte
+                gravada
+                em Brasília/DF.
+            </p>
+        </div>
+    </div>
+    <div class="biografia-dupla">
+        <div class="bio-esquerda">
+            <p>
+                Atualmente Henrique & Juliano acumulam dezenas de sucessos, fruto de um cuidado especial que os irmãos
+                têm na escolha do repertório de seus projetos. Eles são extremamente seletivos e ficam centenas de horas
+                ouvindo composições, até chegarem ao repertório final. O TOP 10 de Henrique & Juliano – que corresponde
+                a milhões de streams – é composto pelas faixas “Arranhão”, “A Maior Saudade”, “Acordo”, “Rasteira”, “Chá
+                de Casa Nova”, “Eu e Eu”, “Liberdade Provisória”, “Universo Conspirou” e “Culpados”.
+            </p>
+        </div>
+        <div class="bio-direita">
+            <p>
+                Uma sintonia que vai muito além do que se pode imaginar, nada da carreira de Henrique & Juliano é
+                decidido por uma só voz. Eles não só formam uma dupla, são irmãos e acima de tudo se respeitam e todas
+                as ações só acontecem com o aval dos dois. Entre os irmãos não existe vaidade e sim uma enorme e genuína
+                cumplicidade.
+            </p>
+        </div>
+    </div>
+    <div class="perfil-dupla">
+        <div class="perfil-henrique">
+            <img src="henrique.png" alt="">
+            <h1>Henrique</h1>
+            <p>
+                Henrique cursava direito e ainda no seu primeiro emprego, conseguiu através de ajuda de amigos realizar
+                a
+                abertura da festa “Balada Sertaneja” ao lado de nomes já renomados, a partir daí percebeu que tinha
+                grande
+                potencial ao lado do irmão na carreira musical e se dedicou a isso. Fora dos palcos é chegado a
+                velocidade e
+                prática automobilística de arrancada e cart. Hoje, administra muito bem o tempo entre cuidar da
+                carreira,
+                dos
+                negócios e da família, pai de dois filhos, Helena e Miguel, Henrique vive uma vida reservada morando com
+                a
+                esposa e filhos e ao lado do irmão na fazenda em Palmas.
+            </p>
+        </div>
+        <div class="perfil-juliano">
+            <img src="juliano.png" alt="">
+            <h1>JULIANO</h1>
+            <p>
+                Edson Alves dos Reis Júnior, o Juliano, é o caçula por apenas um ano de diferença, nasceu no dia 27 de
+                novembro
+                de 1990, teve as mesmas influências que o irmão e sempre foi muito inspirado pelo pai.
+                Juliano tem uma personalidade calma, mas não se engane, e principalmente não abuse. Vaidade é algo que
+                não
+                lhe
+                pertence. Longe dos holofotes costuma gostar de adrenalina, tem como hobbies: o drift – esporte de
+                manobras
+                radicais em carro adaptado – é um dos preferidos de Juliano, além de pilotar avião, com brevê desde os
+                18
+                anos
+                seguindo os passos do pai. Hoje, Juliano é pai de duas meninas, Maria Antônia e Maria Clara.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Ana Laura & Gaby.</p>
+    </footer>
+</body>
+
+</html>

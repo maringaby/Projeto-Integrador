@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernando & Sorocaba - Biografia</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        background-color: black;
+    }
+ 
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+ 
+    .container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+ 
+    .texto {
+        font-size: 150px;
+        position: absolute;
+        left: 360px;
+        bottom: 80px;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        margin: 50px;
+        line-height: 0.9;
+    }
+ 
+    .perfil-dupla {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        margin: 60px;
+    }
+ 
+    .perfil-henrique,
+    .perfil-juliano {
+        width: 60%;
+        box-sizing: border-box;
+    }
+ 
+    .biografia-dupla {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        margin: 60px;
+    }
+ 
+    .bio-esquerda,
+    .bio-direita {
+        width: 80%;
+        box-sizing: border-box;
+    }
+ 
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        margin-bottom: 15px;
+        color: white;
+    }
+ 
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: justify;
+        color: white;
+    }
+ 
+    img {
+        width: 60%;
+        box-sizing: border-box;
+    }
+ 
+    /* restrinja o estilo global de imagens e crie regras específicas para perfis */
+    img {
+        box-sizing: border-box;
+    }
+ 
+    /* estilos para layout dos perfis */
+    .perfil-dupla {
+        gap: 40px;
+    }
+ 
+    .perfil-henrique,
+    .perfil-juliano {
+        width: 48%;
+        box-sizing: border-box;
+    }
+ 
+    /* coloca imagem e texto lado a lado dentro do perfil */
+    .perfil-henrique,
+    .perfil-juliano {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+ 
+    /* tamanho da imagem dentro do perfil */
+    .perfil-henrique img,
+    .perfil-juliano img {
+        width: 35%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #1a1a1a;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        border: 1px solid #333333;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .back-button:hover {
+        background-color: #333333;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .biografia-dupla,
+    .perfil-dupla {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .biografia-dupla.visible,
+    .perfil-dupla.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.biografia-dupla, .perfil-dupla').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+<body>
+    <a href="../index.html" class="back-button">
+        <span>←</span> Voltar
+    </a>
+    <div class="container">
+        <img src="Mídia (3).jpg" alt="Fernando e Sorocaba">
+        <div class="texto"><strong>BIO
+                <br>GRAFIA</strong></div>
+    </div>
+    <div class="biografia-dupla">
+        <div class="bio-esquerda">
+            <p>
+                A dupla Fernando & Sorocaba é um dos maiores nomes do sertanejo moderno, conhecida por seu estilo
+                inovador,
+                grandes produções e presença marcante nos palcos. Vindos do interior de São Paulo, conquistaram o país
+                mesclando
+                romantismo, country, pop e letras que se conectam facilmente com o público.
+            </p>
+        </div>
+        <div class="bio-direita">
+            <p>
+                Ganhando notoriedade a partir de 2007, a dupla lançou sucessos que marcaram uma geração, como
+                “Paga Pau”, “Madri”, “É Tenso”, “As Mina Pira”, “Gaveta”, “Zona de Risco” e “Celebridade”.
+                Ao longo da carreira, se destacaram também pela tecnologia e impacto visual de seus shows,
+                criando verdadeiras experiências de entretenimento.
+            </p>
+        </div>
+    </div>
+    <div class="biografia-dupla">
+        <div class="bio-esquerda">
+            <p>
+                Fernando & Sorocaba acumulam bilhões de visualizações e streams nas plataformas digitais,
+                além de turnês internacionais que levaram seu som para os Estados Unidos, Europa e América do Sul.
+                Suas apresentações sempre surpreendem, com palcos diferenciados, efeitos especiais e muita energia.
+            </p>
+        </div>
+        <div class="bio-direita">
+            <p>
+                A dupla também é reconhecida por composições de sucesso e por fortalecer novos talentos no sertanejo,
+                sempre inovando e expandindo os limites do gênero. Com carisma, sintonia e visão empreendedora,
+                Fernando & Sorocaba seguem firmes como um dos projetos mais influentes da música brasileira.
+            </p>
+        </div>
+    </div>
+    <div class="perfil-dupla">
+        <div class="perfil-fernando">
+            <img src="" alt="">
+            <h1>Fernando</h1>
+            <p>
+                Fernando Fakri de Assis, o Fernando, nasceu em 21 de abril de 1984, em Ji-Paraná (RO).
+                Além de cantor, se destaca como produtor musical, arranjador e empresário.
+                É responsável por produzir vários artistas do sertanejo moderno, contribuindo para renovar o estilo.
+                Conhecido por sua sensibilidade musical e dedicação ao estúdio, Fernando também é pai e costuma manter
+                uma vida reservada fora dos palcos.
+            </p>
+        </div>
+        <div class="perfil-sorocaba">
+            <img src="" alt="">
+            <h1>Sorocaba</h1>
+            <p>
+                Bruno Cesar Bortholazzi, o Sorocaba, nasceu em 15 de setembro de 1980, em São Paulo (SP).
+                Seu apelido vem da cidade onde cresceu e iniciou sua trajetória musical.
+                Além de cantor, é um dos maiores compositores e empresários do meio sertanejo,
+                responsável por revelar diversos artistas de sucesso.
+                Sorocaba é conhecido por sua visão estratégica, paixão pelo agronegócio e forte espírito empreendedor.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Ana Laura & Gaby.</p>
+    </footer>
+</body>
+
+</html>

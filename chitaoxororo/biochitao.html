@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitãozinho & Xororó - Biografia</title>
+</head>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        background-color: black;
+    }
+
+    .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #1a1a1a;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        border: 1px solid #333333;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .back-button:hover {
+        background-color: #333333;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    .container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .texto {
+        font-size: 150px;
+        position: absolute;
+        left: 360px;
+        bottom: 80px;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        margin: 50px;
+        line-height: 0.9;
+    }
+
+    .perfil-dupla {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        margin: 60px;
+    }
+
+    .perfil-henrique,
+    .perfil-juliano {
+        width: 60%;
+        box-sizing: border-box;
+    }
+
+    .biografia-dupla {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        margin: 60px;
+    }
+
+    .bio-esquerda,
+    .bio-direita {
+        width: 80%;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        margin-bottom: 15px;
+        color: white;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: justify;
+        color: white;
+    }
+
+    img {
+        width: 60%;
+        box-sizing: border-box;
+    }
+
+    /* restrinja o estilo global de imagens e crie regras específicas para perfis */
+    img {
+        box-sizing: border-box;
+    }
+
+    /* estilos para layout dos perfis */
+    .perfil-dupla {
+        gap: 40px;
+    }
+
+    .perfil-henrique,
+    .perfil-juliano {
+        width: 48%;
+        box-sizing: border-box;
+    }
+
+    /* coloca imagem e texto lado a lado dentro do perfil */
+    .perfil-henrique,
+    .perfil-juliano {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    /* tamanho da imagem dentro do perfil */
+    .perfil-henrique img,
+    .perfil-juliano img {
+        width: 35%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .biografia-dupla,
+    .perfil-dupla {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .biografia-dupla.visible,
+    .perfil-dupla.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.biografia-dupla, .perfil-dupla').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+<body>
+    <a href="../index.html" class="back-button">
+        <span>←</span> Voltar
+    </a>
+    <div class="container">
+        <img src="Chitãozinho & Xororó.webp" alt="Chitãozinho e Xororó">
+        <div class="texto"><strong>BIO<br>GRAFIA</strong></div>
+    </div>
+
+    <div class="biografia-dupla">
+        <div class="bio-esquerda">
+            <p>
+                Nascidos em Astorga, no interior do Paraná, José Lima Sobrinho e Durval de Lima, conhecidos
+                artisticamente como Chitãozinho & Xororó, são considerados ícones da música sertaneja e
+                pioneiros na popularização do gênero em todo o Brasil. Consolidaram-se como uma das duplas
+                mais respeitadas e premiadas do país, levando a música sertaneja para os maiores palcos
+                nacionais e internacionais, sempre mantendo proximidade com os fãs e valorizando suas raízes.
+            </p>
+        </div>
+        <div class="bio-direita">
+
+            <p>
+                Ao longo da trajetória, lançaram inúmeros trabalhos de enorme sucesso, como “60 Dias
+                Apaixonado” (1979), “Fio de Cabelo” (1982), “Cowboy do Asfalto” (1986), “Coração Sertanejo”
+                (1991), “Na Aba do Meu Chapéu” (1996), “Do Tamanho do Nosso Amor” (2013) e “Por Todos os
+                Tempos” (2022). São donos de uma discografia impressionante, que ultrapassa 40 álbuns, além
+                de DVDs memoráveis que ajudaram a escrever a história da música brasileira.
+            </p>
+        </div>
+    </div>
+
+    <div class="biografia-dupla">
+        <div class="bio-esquerda">
+
+            <p>
+                Atualmente, Chitãozinho & Xororó acumulam sucessos que marcaram gerações, como “Fio de
+                Cabelo”, “Nuvem de Lágrimas”, “Evidências”, “Alô”, “Página de Amigos” e “Se Deus Me Ouvisse”.
+                Canções que não apenas fizeram história, mas se tornaram parte da identidade cultural do
+                Brasil. O repertório da dupla é selecionado com cuidado, equilibrando modernidade e tradição,
+                sempre com melodias inesquecíveis e letras emocionantes.
+            </p>
+        </div>
+        <div class="bio-direita">
+
+            <p>
+                Mais do que uma dupla sertaneja, Chitãozinho & Xororó representam uma irmandade que ultrapassa
+                a música. Todas as decisões de carreira são tomadas em conjunto, numa relação marcada por
+                respeito, cumplicidade e a missão de levar emoção a cada geração de fãs.
+            </p>
+        </div>
+    </div>
+
+    <div class="perfil-dupla">
+        <div class="perfil-chitao">
+            <img src="" alt="">
+            <h1>Chitãozinho</h1>
+            <p>
+                José Lima Sobrinho, o Chitãozinho, nasceu em Astorga (PR) no dia 5 de maio de 1954.
+                Desde muito jovem já demonstrava talento musical, influenciado pelo ambiente familiar e pelas raízes
+                sertanejas. Com timbre marcante, sempre foi uma das vozes de referência no gênero, além de ter
+                participação ativa nos arranjos e direcionamentos musicais da dupla. Fora dos palcos, é
+                apaixonado por cavalos, natureza e vida no campo, mantendo a simplicidade mesmo após décadas
+                de fama.
+            </p>
+        </div>
+
+        <div class="perfil-xororo">
+            <img src="" alt="">
+            <h1>Xororó</h1>
+            <p>
+                Durval de Lima, o Xororó, nasceu também em Astorga (PR) no dia 30 de setembro de 1957.
+                Reconhecido por sua voz inconfundível e pela afinação impecável, é considerado um dos maiores
+                intérpretes da música sertaneja. Além de cantor, Xororó também se destacou como compositor e
+                instrumentista, participando ativamente da produção musical da dupla. É casado com Noely, com
+                quem tem dois filhos, Sandy e Junior, que também seguiram carreira artística e se tornaram
+                fenômenos da música brasileira. Longe dos palcos, Xororó valoriza a vida familiar e o contato
+                com a natureza.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Ana Laura & Gaby.</p>
+    </footer>
+</body>
+
+</html>

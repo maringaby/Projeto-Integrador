@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>César Menotti & Fabiano - Biografia</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        background-color: black;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    .container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .texto {
+        font-size: 150px;
+        position: absolute;
+        left: 360px;
+        bottom: 80px;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        margin: 50px;
+        line-height: 0.9;
+    }
+
+    .perfil-dupla {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        margin: 60px;
+    }
+
+    .perfil-henrique,
+    .perfil-juliano {
+        width: 60%;
+        box-sizing: border-box;
+    }
+
+    .biografia-dupla {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        margin: 60px;
+    }
+
+    .bio-esquerda,
+    .bio-direita {
+        width: 80%;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        margin-bottom: 15px;
+        color: white;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: justify;
+        color: white;
+    }
+
+    img {
+        width: 60%;
+        box-sizing: border-box;
+    }
+
+    /* restrinja o estilo global de imagens e crie regras específicas para perfis */
+    img {
+        box-sizing: border-box;
+    }
+
+    /* estilos para layout dos perfis */
+    .perfil-dupla {
+        gap: 40px;
+    }
+
+    .perfil-henrique,
+    .perfil-juliano {
+        width: 48%;
+        box-sizing: border-box;
+    }
+
+    /* coloca imagem e texto lado a lado dentro do perfil */
+    .perfil-henrique,
+    .perfil-juliano {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    /* tamanho da imagem dentro do perfil */
+    .perfil-henrique img,
+    .perfil-juliano img {
+        width: 35%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #1a1a1a;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        border: 1px solid #333333;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .back-button:hover {
+        background-color: #333333;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .biografia-dupla,
+    .perfil-dupla {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .biografia-dupla.visible,
+    .perfil-dupla.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.biografia-dupla, .perfil-dupla').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+<body>
+    <a href="../index.html" class="back-button">
+        <span>←</span> Voltar
+    </a>
+    <div class="container">
+        <img src="cesar menotti e gordinho.jpg" alt="César Menotti e Fabiano">
+        <div class="texto"><strong>BIO<br>GRAFIA</strong></div>
+    </div>
+
+    <div class="biografia-dupla">
+        <div class="bio-esquerda">
+            <p>
+                Nascidos em Belo Horizonte, capital de Minas Gerais, César Menotti & Fabiano cresceram em uma
+                família simples e apaixonada por música sertaneja. Desde jovens, tiveram contato com a
+                música através das rodas de viola e das influências do interior mineiro. Consolidaram-se no
+                cenário nacional como uma das principais duplas do chamado “sertanejo universitário”, trazendo
+                uma mistura de romantismo, carisma e bom humor que conquistou o Brasil inteiro.
+            </p>
+        </div>
+        <div class="bio-direita">
+
+            <p>
+                Ao longo da carreira lançaram trabalhos de grande destaque como “Palavras de Amor” (2005),
+                “Com Você” (2007), “Retrato” (2011), “Memórias Anos 80 e 90” (2017), “César Menotti & Fabiano
+                Ao Vivo no Morro da Urca” (2019) e “Os Menotti” (2022). São reconhecidos por lotar grandes
+                eventos e festivais, além de colecionarem discos de ouro e platina ao longo da trajetória.
+            </p>
+        </div>
+    </div>
+    <div class="biografia-dupla">
+        <div class="bio-esquerda">
+
+            <p>
+                Atualmente, César Menotti & Fabiano acumulam sucessos que marcaram época, como “Leilão”,
+                “Ciumenta”, “Bandido do Amor”, “Como um Anjo”, “Tentei”, “Você de Volta” e “Disco Arranhado”.
+                Suas músicas seguem entre as mais tocadas nas rádios e plataformas digitais, mantendo o estilo
+                alegre e romântico que os consagrou.
+            </p>
+        </div>
+        <div class="bio-direita">
+
+            <p>
+                Mais do que irmãos, César Menotti & Fabiano cultivam uma parceria de vida e de palco, sempre
+                tomando as decisões da carreira em conjunto, com respeito e cumplicidade. Essa sintonia é uma
+                das marcas mais fortes da dupla e um dos segredos de sua longevidade no cenário musical.
+            </p>
+        </div>
+    </div>
+    <div class="perfil-dupla">
+        <div class="perfil-cesar">
+            <img src="" alt="">
+            <h1>César Menotti</h1>
+            <p>
+                César Menotti nasceu no dia 24 de março de 1982, em Belo Horizonte (MG).
+                É o irmão mais velho e sempre demonstrou paixão pela música e pela composição, sendo responsável
+                por
+                parte do
+                repertório da dupla. Com uma personalidade extrovertida, também se destaca pelo carisma com o
+                público. Fora
+                dos palcos, leva uma vida discreta e é dedicado à família, além de ser apaixonado por literatura
+                e
+                gastronomia.
+            </p>
+        </div>
+
+        <div class="perfil-fabiano">
+            <img src="" alt="">
+            <h1>Fabiano</h1>
+            <p>
+                Fabiano nasceu no dia 25 de novembro de 1983, também em Belo Horizonte (MG).
+                Desde cedo já mostrava afinidade com a música e tornou-se a voz de destaque da dupla, com um
+                timbre
+                forte e
+                marcante. É conhecido por seu jeito bem-humorado e pela energia nos palcos, conquistando os fãs
+                em
+                cada
+                apresentação. Fora da carreira artística, Fabiano valoriza os momentos ao lado da família e
+                mantém
+                hobbies
+                ligados ao esporte e à vida simples do interior.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Ana Laura & Gaby.</p>
+    </footer>
+</body>
+
+</html>

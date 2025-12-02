@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorge & Mateus - Biografia</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        background-color: black;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    .container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .texto {
+        font-size: 150px;
+        position: absolute;
+        left: 360px;
+        bottom: 80px;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        margin: 50px;
+        line-height: 0.9;
+    }
+
+    .perfil-dupla {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        margin: 60px;
+    }
+
+    .perfil-henrique,
+    .perfil-juliano {
+        width: 60%;
+        box-sizing: border-box;
+    }
+
+    .biografia-dupla {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        margin: 60px;
+    }
+
+    .bio-esquerda,
+    .bio-direita {
+        width: 80%;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        margin-bottom: 15px;
+        color: white;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: justify;
+        color: white;
+    }
+
+    img {
+        width: 60%;
+        box-sizing: border-box;
+    }
+
+    /* restrinja o estilo global de imagens e crie regras específicas para perfis */
+    img {
+        box-sizing: border-box;
+    }
+
+    /* estilos para layout dos perfis */
+    .perfil-dupla {
+        gap: 40px;
+    }
+
+    .perfil-henrique,
+    .perfil-juliano {
+        width: 48%;
+        box-sizing: border-box;
+    }
+
+    /* coloca imagem e texto lado a lado dentro do perfil */
+    .perfil-henrique,
+    .perfil-juliano {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    /* tamanho da imagem dentro do perfil */
+    .perfil-henrique img,
+    .perfil-juliano img {
+        width: 35%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #1a1a1a;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        border: 1px solid #333333;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .back-button:hover {
+        background-color: #333333;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .biografia-dupla,
+    .perfil-dupla {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .biografia-dupla.visible,
+    .perfil-dupla.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.biografia-dupla, .perfil-dupla').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+<body>
+    <a href="../index.html" class="back-button">
+        <span>←</span> Voltar
+    </a>
+    <div class="container">
+        <img src="Jorge e Mateus.png" alt="Jorge e Mateus">
+        <div class="texto"><strong>BIO<br>GRAFIA</strong></div>
+    </div>
+
+    <div class="biografia-dupla">
+        <div class="bio-esquerda">
+            <p>
+                Nascidos em Itumbiara, interior do estado de Goiás, Jorge & Mateus se tornaram referência no
+                cenário da música sertaneja universitária, sendo reconhecidos como uma das maiores duplas do
+                Brasil. Desde o início da carreira, conquistaram o público com interpretações marcantes e
+                músicas que falam de amor, emoção e intensidade. Consolidaram-se rapidamente no mercado
+                fonográfico, acumulando multidões por onde passam e conquistando admiradores também fora do
+                país.
+            </p>
+        </div>
+        <div class="bio-direita">
+
+            <p>
+                Ao longo da trajetória lançaram sucessos memoráveis em álbuns e DVDs que marcaram época, como
+                “Ao Vivo em Goiânia” (2007), “O Mundo é Tão Pequeno” (2009), “Aí Já Era” (2010), “Live in
+                London” (2012), “Os Anjos Cantam” (2015), “Terra Sem CEP” (2018) e “É Simples Assim” (2022).
+                A dupla já ultrapassou bilhões de streams nas plataformas digitais e conquistou feitos
+                internacionais, levando a música sertaneja para plateias na Europa, América do Norte e até na
+                Ásia.
+            </p>
+        </div>
+    </div>
+    <div class="biografia-dupla">
+        <div class="bio-esquerda">
+
+            <p>
+                Atualmente Jorge & Mateus acumulam diversos hits que se tornaram verdadeiros hinos, entre eles
+                “Pode Chorar”, “Voa Beija-Flor”, “Amo Noite e Dia”, “Logo Eu”, “Sosseguei”, “Propaganda”,
+                “Cheirosa”, “Paradigmas” e “Troca”. O repertório da dupla é cuidadosamente escolhido, com
+                melodias envolventes e letras que dialogam diretamente com os sentimentos do público.
+            </p>
+        </div>
+        <div class="bio-direita">
+
+            <p>
+                Mais do que parceiros musicais, Jorge & Mateus construíram uma amizade sólida que reflete na
+                sintonia dos palcos. Todas as decisões de carreira são tomadas em conjunto, sempre com respeito
+                mútuo e foco na autenticidade, características que os tornaram uma das duplas mais consistentes
+                e queridas da história da música sertaneja.
+            </p>
+        </div>
+    </div>
+
+        <div class="perfil-dupla">
+            <div class="perfil-jorge">
+                <img src="" alt="">
+                <h1>Jorge</h1>
+                <p>
+                    Jorge Alves Barcelos, conhecido como Jorge, nasceu no dia 27 de agosto de 1982 em Itumbiara (GO).
+                    Desde cedo demonstrou interesse pela música, mas inicialmente seguiu carreira acadêmica em Direito.
+                    Sua vida mudou quando encontrou em Mateus o parceiro ideal para dar voz às suas paixões musicais.
+                    Reconhecido por sua voz marcante e personalidade extrovertida, Jorge também é ligado à família e
+                    costuma aproveitar o tempo livre em viagens e momentos de lazer. Pai de dois filhos, divide-se entre
+                    os palcos e a vida familiar.
+                </p>
+            </div>
+
+            <div class="perfil-mateus">
+                <img src="" alt="">
+                <h1>Mateus</h1>
+                <p>
+                    Mateus Pedro Liduário de Oliveira, o Mateus, nasceu em 15 de julho de 1986, também em Itumbiara
+                    (GO).
+                    Diferente de Jorge, Mateus estudou Agronomia antes de mergulhar de vez no universo musical. É
+                    conhecido
+                    por seu talento como instrumentista e pela voz afinada que completa com perfeição a harmonia da
+                    dupla.
+                    Fora dos palcos, Mateus leva uma vida reservada, dedicada à família, sendo pai de dois filhos.
+                    Apaixonado pela vida no campo, cultiva hobbies ligados à natureza e à simplicidade do interior.
+                </p>
+            </div>
+        </div>
+
+    <footer>
+        <p>© 2025 Ana Laura & Gaby.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus & Kauan - Biografia</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        background-color: black;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    .container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .texto {
+        font-size: 150px;
+        position: absolute;
+        left: 360px;
+        bottom: 80px;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        margin: 50px;
+        line-height: 0.9;
+    }
+
+    .perfil-dupla {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        margin: 60px;
+    }
+
+    .perfil-henrique,
+    .perfil-juliano {
+        width: 60%;
+        box-sizing: border-box;
+    }
+
+    .biografia-dupla {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        margin: 60px;
+    }
+
+    .bio-esquerda,
+    .bio-direita {
+        width: 80%;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        margin-bottom: 15px;
+        color: white;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: justify;
+        color: white;
+    }
+
+    img {
+        width: 60%;
+        box-sizing: border-box;
+    }
+
+    /* restrinja o estilo global de imagens e crie regras específicas para perfis */
+    img {
+        box-sizing: border-box;
+    }
+
+    /* estilos para layout dos perfis */
+    .perfil-dupla {
+        gap: 40px;
+    }
+
+    .perfil-henrique,
+    .perfil-juliano {
+        width: 48%;
+        box-sizing: border-box;
+    }
+
+    /* coloca imagem e texto lado a lado dentro do perfil */
+    .perfil-henrique,
+    .perfil-juliano {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    /* tamanho da imagem dentro do perfil */
+    .perfil-henrique img,
+    .perfil-juliano img {
+        width: 35%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #1a1a1a;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        border: 1px solid #333333;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .back-button:hover {
+        background-color: #333333;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .biografia-dupla,
+    .perfil-dupla {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .biografia-dupla.visible,
+    .perfil-dupla.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.biografia-dupla, .perfil-dupla').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+<body>
+    <a href="../index.html" class="back-button">
+        <span>←</span> Voltar
+    </a>
+    <div class="container">
+        <img src="matheus e kauan.jpg" alt="Matheus e Kauan">
+        <div class="texto"><strong>BIO<br>GRAFIA</strong></div>
+    </div>
+
+    <div class="biografia-dupla">
+        <div class="bio-esquerda">
+            <p>
+                Nascidos em Itapuranga, no interior de Goiás, Matheus & Kauan cresceram embalados pela paixão pela
+                música,
+                trazida desde cedo pela família. Consolidaram-se no cenário sertanejo nacional como uma das duplas mais
+                queridas
+                e afinadas, conhecidos por suas canções românticas que conquistaram multidões. Sempre próximos de suas
+                origens,
+                mantêm a simplicidade, os ideais e a cumplicidade que os levaram do interior goiano para os maiores
+                palcos do
+                Brasil e do mundo.
+            </p>
+        </div>
+        <div class="bio-direita">
+
+            <p>
+                Ao longo da carreira, lançaram trabalhos de enorme repercussão como “Ao Vivo em Goiânia” (2013), “Face a
+                Face”
+                (2015), “Na Praia” (2016), “Intensamente Hoje” (2019), “10 Anos na Praia” (2021) e “Se Melhorar Estraga”
+                (2023).
+                Com vários sucessos emplacados nas rádios e plataformas digitais, a dupla também atravessou fronteiras,
+                tendo
+                músicas em trilhas sonoras de novelas, além de parcerias com grandes nomes da música nacional e
+                internacional.
+            </p>
+        </div>
+    </div>
+    <div class="biografia-dupla">
+        <div class="bio-esquerda">
+
+            <p>
+                Atualmente, Matheus & Kauan acumulam diversos hits no TOP 10 das plataformas de streaming, como “Que
+                Sorte a
+                Nossa”, “Te Assumi Pro Brasil”, “O Nosso Santo Bateu”, “Decide Aí”, “A Rosa e o Beija-Flor”, “Vou
+                Ter Que
+                Superar” e “Expectativa x Realidade”. O segredo do sucesso da dupla está na escolha criteriosa do
+                repertório,
+                que valoriza melodias envolventes e letras que falam diretamente ao coração.
+            </p>
+        </div>
+        <div class="bio-direita">
+
+            <p>
+                Mais do que irmãos de sangue, Matheus & Kauan são parceiros inseparáveis dentro e fora dos palcos.
+                Todas as
+                decisões de carreira são tomadas em conjunto, numa relação marcada pela amizade, pelo respeito mútuo
+                e pela
+                cumplicidade que encanta fãs por onde passam.
+            </p>
+        </div>
+    </div>
+    <div class="perfil-dupla">
+        <div class="perfil-matheus">
+            <img src="" alt="">
+            <h1>Matheus</h1>
+            <p>
+                Matheus Aleixo Pinto Rosa, o irmão mais velho, nasceu no dia 10 de outubro de 1984.
+                Desde cedo, demonstrou vocação para compor e cantar, e foi através de suas músicas que a dupla
+                começou a chamar
+                atenção no mercado. Reconhecido como um dos grandes compositores do sertanejo moderno, já
+                escreveu canções
+                gravadas por artistas como Jorge & Mateus e Luan Santana. Fora dos palcos, é dedicado à família
+                e pai de dois
+                filhos, vivendo uma vida discreta ao lado da esposa, equilibrando a rotina dos negócios, da
+                carreira e da vida
+                pessoal.
+            </p>
+        </div>
+
+        <div class="perfil-kauan">
+            <img src="" alt="">
+            <h1>Kauan</h1>
+            <p>
+                Osvaldo Pinto Rosa Filho, o Kauan, nasceu em 7 de dezembro de 1988.
+                Sempre demonstrou grande talento vocal. Com carisma e energia contagiante, tornou-se a voz
+                principal da dupla,
+                levando emoção ao interpretar cada canção. Kauan é pai de dois filhos e, assim como o irmão,
+                valoriza a vida
+                familiar. Longe dos holofotes, gosta de aproveitar momentos de lazer com a família e amigos,
+                além de se dedicar
+                a hobbies ligados ao esporte e ao campo.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Ana Laura & Gaby.</p>
+    </footer>
+</body>
+
+</html>

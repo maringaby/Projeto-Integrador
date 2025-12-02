@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discografia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #1a1a1a;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      border: 1px solid #333333;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-button:hover {
+      background-color: #333333;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .discografia {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .album {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .album img {
+      width: 100%;
+      height: auto;
+    }
+
+    .album-info {
+      padding: 15px;
+      color: black;
+    }
+
+    .album-info h3 {
+      margin-top: 0;
+      color: black;
+    }
+
+    .album-info ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .album-info ul li {
+      padding: 4px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+
+    /* Centralizar os dois últimos álbuns */
+    .album:nth-last-child(2),
+    .album:last-child {
+      grid-column: span 1;
+    }
+
+    /* Criar espaço central na última linha */
+    .discografia::after {
+      content: "";
+      grid-column: 2 / 3;
+    }
+
+    @media (max-width: 900px) {
+      .discografia {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .discografia::after {
+        content: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .discografia {
+        grid-template-columns: 1fr;
+      }
+
+      .discografia::after {
+        content: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="../index.html" class="back-button">
+    <span>←</span> Voltar
+  </a>
+
+  <header>
+    <h1>Discografia</h1>
+  </header>
+
+  <section class="discografia">
+    <!-- Álbum 1 -->
+    <div class="album">
+      <img src="ao vivo em palmas 2013.jpeg" alt="Capa do álbum">
+      <div class="album-info">
+        <h3>Ao Vivo Em Palmas (2013)</h3>
+      </div>
+    </div>
+
+    <!-- Álbum 2 -->
+    <div class="album">
+      <img src="Ao Vivo em Brasi╠ülia (2014).jpeg" alt="Capa do álbum">
+      <div class="album-info">
+        <h3>Ao Vivo em Brasília (2014)</h3>
+      </div>
+    </div>
+
+    <!-- Álbum 3 -->
+    <div class="album">
+      <img src="O Ce╠üu Explica Tudo (2017).jpg" alt="Capa do álbum">
+      <div class="album-info">
+        <h3>O Céu Explica Tudo (2017)</h3>
+      </div>
+    </div>
+
+    <!-- Álbum 4 -->
+    <div class="album">
+      <img src="Menos e╠ü Mais (2019).jpg" alt="Capa do álbum">
+      <div class="album-info">
+        <h3>Menos é Mais (2019)</h3>
+      </div>
+    </div>
+
+    <!-- Álbum 5 -->
+    <div class="album">
+      <img src="Ao Vivo no Ibirapuera (2021).avif" alt="Capa do álbum">
+      <div class="album-info">
+        <h3>Ao Vivo no Ibirapuera (2021)</h3>
+      </div>
+    </div>
+
+    <!-- Álbum 6 -->
+    <div class="album">
+      <img src="Manifesto Musical (2021).jpeg" alt="Capa do álbum">
+      <div class="album-info">
+        <h3>Manifesto Musical (2021)</h3>
+      </div>
+    </div>
+
+    <!-- Álbum 7 -->
+    <div class="album">
+      <img src="To Be (Ao Vivo em Brasi╠ülia) (2023).jpg" alt="Capa do álbum">
+      <div class="album-info">
+        <h3>To Be (Ao Vivo em Brasília) (2023)</h3>
+      </div>
+    </div>
+
+    <!-- Álbum 8 -->
+    <div class="album">
+      <img src="Singles e EPs (2024).avif" alt="Capa do álbum">
+      <div class="album-info">
+        <h3>Singles e EPs (2024)</h3>
+      </div>
+    </div>
+
+
+    <div class="album">
+      <img src="album2025.jpg" alt="Capa do álbum">
+      <div class="album-info">
+        <h3>Manifesto Musical 2 (2025)</h3>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2025 Ana Laura & Gaby.</p>
+  </footer>
+
+</body>
+
+</html>

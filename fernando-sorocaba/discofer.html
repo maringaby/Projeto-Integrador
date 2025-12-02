@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discografia - Fernando e Sorocaba</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            border: 1px solid #333333;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-button:hover {
+            background-color: #333333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .discografia {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .album {
+            background-color: #7d0101;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .album img {
+            width: 100%;
+            height: auto;
+        }
+
+        .album-info {
+            padding: 15px;
+            color: black;
+        }
+
+        .album-info h3 {
+            margin-top: 0;
+            color: rgb(255, 255, 255);
+        }
+
+        .album-info ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .album-info ul li {
+            padding: 4px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+
+        /* Centralizar os dois últimos álbuns */
+        .album:nth-last-child(2),
+        .album:last-child {
+            grid-column: span 1;
+        }
+
+        /* Criar espaço central na última linha */
+        .discografia::after {
+            content: "";
+            grid-column: 2 / 3;
+        }
+
+        @media (max-width: 900px) {
+            .discografia {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .discografia::after {
+                content: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .discografia {
+                grid-template-columns: 1fr;
+            }
+
+            .discografia::after {
+                content: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../index.html" class="back-button">
+        <span>←</span> Voltar
+    </a>
+
+    <header>
+        <h1>Discografia</h1>
+    </header>
+
+    <section class="discografia">
+
+        <!-- a uma musica de distancia -->
+        <div class="album">
+            <img src="Fernando & Sorocaba- a uma musica de distancia 1.avif" alt="Capa do álbum">
+            <div class="album-info">
+                <h3>A Uma Música de Distância (2021)</h3>
+            </div>
+        </div>
+
+        <!-- Acústico 2010 -->
+        <div class="album">
+            <img src="ofAcu╠üstico 2010.jpg" alt="Capa do álbum">
+            <div class="album-info">
+                <h3>Acústico (2010)</h3>
+            </div>
+        </div>
+
+        <!-- Antigas 2020 -->
+        <div class="album">
+            <img src="ofAntigas 2020.avif" alt="Capa do álbum">
+            <div class="album-info">
+                <h3>Antigas (2020)</h3>
+            </div>
+        </div>
+
+        <!-- Isso é churrasco -->
+        <div class="album">
+            <img src="ofissoechurrasco.jpg" alt="Capa do álbum">
+            <div class="album-info">
+                <h3>Isso é churrasco (2020)</h3>
+            </div>
+        </div>
+
+        <!-- Modão (2021) -->
+        <div class="album">
+            <img src="ofModa╠âo 2021.avif" alt="Capa do álbum">
+            <div class="album-info">
+                <h3>Modão (2021)</h3>
+            </div>
+        </div>
+
+        <!-- Nash 2024 -->
+        <div class="album">
+            <img src="ofNash 2024.webp" alt="Capa do álbum">
+            <div class="album-info">
+                <h3>Nash (2024)</h3>
+            </div>
+        </div>
+
+        <!-- O chamado da floresta 2018 -->
+        <div class="album">
+            <img src="ofO chamado da floresta 2018.jpg" alt="Capa do álbum">
+            <div class="album-info">
+                <h3>O Chamado da Floresta (2018)</h3>
+            </div>
+        </div>
+
+        <!-- On Fire 2023 -->
+        <div class="album">
+            <img src="ofOn Fire 2023.jpg" alt="Capa do álbum">
+            <div class="album-info">
+                <h3>On Fire (2023)</h3>
+            </div>
+        </div>
+
+        <!-- Sou do interior 2017 -->
+        <div class="album">
+            <img src="ofsou do interior 2017.jpg" alt="Capa do álbum">
+            <div class="album-info">
+                <h3>Sou do Interior (2017)</h3>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <footer>
+        <p>© 2025 Ana Laura & Gaby.</p>
+    </footer>
+
+</body>
+
+</html>
